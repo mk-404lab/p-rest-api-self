@@ -2,7 +2,6 @@ package com.back.domain.post.post.entity;
 
 
 import com.back.domain.post.comment.entity.Comment;
-import com.back.domain.post.post.dto.PostDto;
 import com.back.global.entity.BaseEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -63,13 +62,4 @@ public class Post extends BaseEntity {
         comments.remove(comment);
     }
 
-    public static PostDto toDto(Post post) {
-        return new PostDto(
-                post.getId(),
-                post.getTitle(),
-                post.getContent(),
-                post.getCreateDate(),
-                post.getModifyDate()
-        );
-    }
 }
