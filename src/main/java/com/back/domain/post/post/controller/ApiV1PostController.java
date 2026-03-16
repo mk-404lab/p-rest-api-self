@@ -52,7 +52,7 @@ public class ApiV1PostController {
     @GetMapping("{id}/delete")
     @ResponseBody
     @Transactional
-    public RsData<PostDto> delete(
+    public RsData<Void> delete(
             @PathVariable int id
     ) {
         Post post = postService.findById(id).get();
@@ -60,8 +60,7 @@ public class ApiV1PostController {
 
         return new RsData<>(
                 "%d번 글이 삭제되었습니다.".formatted(id),
-                "204-1",
-                new PostDto(post)
+                "204-1"
         );
     }
 }
